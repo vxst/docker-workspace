@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
+        name: Cleanup
+        run: sudo apt-get clean
+      -
         name: Checkout
         uses: actions/checkout@v2
       -
@@ -29,6 +32,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: vxst/workspace:latest

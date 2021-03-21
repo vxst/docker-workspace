@@ -23,4 +23,13 @@ RUN apt-get install -y -q rustc golang git git-lfs gpg nodejs julia swi-prolog c
 
 RUN apt-get install -y -q libgrpc++-dev protobuf-c-compiler protobuf-compiler-grpc
 
+RUN adduser --disabled-password vxst
+RUN echo "vxst ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vxst-sudo
+RUN chsh -s /bin/zsh vxst
+
+VOLUME /home
+
+USER vxst
+WORKDIR /home/vxst
+
 CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
