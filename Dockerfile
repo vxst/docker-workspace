@@ -9,7 +9,7 @@ RUN apt-get install -y -q build-essential
 
 RUN apt-get install -y -q vim-nox emacs-nox byobu zsh bash sudo xz-utils \
                           bash-completion bzip2 gzip zstd lldb \
-                          gcc g++ gfortran gdb valgrind clang openjdk-17-jdk \
+                          gcc g++ gfortran gdb valgrind clang openjdk-17-jdk default-jdk \
                           libopenblas-dev libomp-dev libgomp1 openmpi-bin llvm-dev \
                           cmake
 
