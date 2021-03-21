@@ -15,7 +15,8 @@ jobs:
           sudo swapoff -a
           sudo rm -f /swapfile
           sudo apt-get clean
-          docker rmi $(docker image ls -aq)
+          docker image prune -a
+          docker volume prune
           df -h
       -
         name: Checkout
@@ -37,6 +38,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
           tags: vxst/workspace:latest
