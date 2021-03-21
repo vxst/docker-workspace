@@ -15,8 +15,8 @@ jobs:
           sudo swapoff -a
           sudo rm -f /swapfile
           sudo apt-get clean
-          sudo rm -rf "/usr/local/share/boost"
-          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+          sudo rm -rf "/opt/*"
+          sudo rm -rf "/usr/local"
           docker image prune -a -f
           docker volume prune -f
           df -h
