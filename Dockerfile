@@ -11,7 +11,7 @@ RUN apt-get install -y -q vim-nox emacs-nox byobu zsh bash sudo xz-utils \
                           bash-completion bzip2 gzip zstd lldb \
                           gcc g++ gfortran gdb valgrind clang openjdk-17-jdk default-jdk \
                           libopenblas-dev libomp-dev libgomp1 openmpi-bin llvm-dev \
-                          cmake
+                          cmake git git-lfs gpg
 
 RUN apt-get install -y -q --no-install-recommends texlive texlive-lang-chinese
 
@@ -21,9 +21,10 @@ RUN apt-get install -y -q --no-install-recommends python3 python3-ipython ipytho
                           python3-skimage python3-sklearn python3-pandas python3-tables python3-joblib python3-matplotlib \
                           python3-django python3-requests python3-tornado python3-pip python3-pil
 
-RUN apt-get install -y -q rustc golang git git-lfs gpg nodejs julia swi-prolog clojure scala mono-devel npm groovy
+RUN apt-get install -y -q rustc golang nodejs npm julia gdc mono-devel groovy clojure scala \
+                          swi-prolog afnix elixir ghc pakcs nim lua5.4
 
-RUN apt-get install -y -q coq pari-gp pari-galpol
+RUN apt-get install -y -q coq pari-gp pari-galpol gnuplot maxima pi octave yacas
 
 RUN apt-get install -y -q libgrpc++-dev protobuf-c-compiler protobuf-compiler-grpc
 
