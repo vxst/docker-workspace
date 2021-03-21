@@ -6,11 +6,11 @@ on:
       - 'master'
 
 jobs:
-  build_amd64:
+  build_image:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        arch: ['amd64', 'arm64']
+        arch: ['amd64', 'arm64', 'arm/v7']
     steps:
       -
         name: Checkout
