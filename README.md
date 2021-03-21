@@ -7,7 +7,7 @@ Tested on Intel Ice Lake, ARM Cortex-A53 and Cortex-A72(Raspberry Pi, using arm/
 Numpy, scipy and sympy pass the self-tests. Most packages have been briefly tested and used on all three platforms.
 
 The aim of this image is to balance usability, correctness and the latest version. It might be the easiest way to
-setup a Linux workspace on Apple M1, since Docker has RC1 version of Apple Silicon, and there seems to be
+setup a Linux workspace on Apple M1, since Docker has released RC1 version of Apple Silicon, and there seems to be
 no other way to run VMs on the new M1 chip.
 
 # Usage
