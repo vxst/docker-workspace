@@ -21,7 +21,9 @@ RUN apt-get install -y -q --no-install-recommends python3 python3-ipython ipytho
                           python3-skimage python3-sklearn python3-pandas python3-tables python3-joblib python3-matplotlib \
                           python3-django python3-requests python3-tornado python3-pip python3-pil
 
-RUN apt-get install -y -q rustc golang git git-lfs gpg nodejs julia swi-prolog clojure scala coq mono-devel npm groovy
+RUN apt-get install -y -q rustc golang git git-lfs gpg nodejs julia swi-prolog clojure scala mono-devel npm groovy
+
+RUN apt-get install -y -q coq pari-gp pari-galpol
 
 RUN apt-get install -y -q libgrpc++-dev protobuf-c-compiler protobuf-compiler-grpc
 
