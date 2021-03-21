@@ -15,8 +15,8 @@ jobs:
           sudo swapoff -a
           sudo rm -f /swapfile
           sudo apt-get clean
-          docker image prune -a
-          docker volume prune
+          docker image prune -a -f
+          docker volume prune -f
           df -h
       -
         name: Checkout
