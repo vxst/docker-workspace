@@ -2,6 +2,12 @@
 
 A unanimous development environment across amd64, arm/v7, arm64/v8.
 
+My devices are:
+
+ * Apple M1 (Macbook Air)
+ * i7 1068NG7(Macbook Pro)
+ * Cortex-A72(Raspberry Pi)
+
 Tested on Intel Ice Lake, ARM Cortex-A53 and Cortex-A72(Raspberry Pi, using arm/v7 and arm64/v8), Apple M1(with arm64/v8).
 
 Numpy, scipy and sympy pass the self-tests. Most packages have been briefly tested and used on all three platforms.
@@ -10,7 +16,48 @@ The aim of this image is to balance usability, correctness and the latest versio
 setup a Linux workspace on Apple M1, since Docker has released RC1 version of Apple Silicon, and there seems to be
 no other way to run VMs on the new M1 chip.
 
+# Included language
+
+Language selection is based on my personal habit. You can always add new languages in homedir, or 
+build image FROM vxst/workspace.
+
+## Common purpose languages
+
+ * C/C++/ObjC/ObjC++/C#/D
+ * Fortran
+ * Java 11/17
+ * Python3 with science related libraries
+ * Elixir
+ * NodeJS
+ * Rust
+ * Golang
+ * Julia
+ * Haskell
+ * Prolog
+ * Groovy
+ * Clojure
+ * Scala
+ * Lua
+ * Nim
+ * OCaml
+ * AFNIX
+ * Curry
+
+## Domain specific programming languages
+
+ * Coq
+ * Pari/GP
+ * Maxima
+ * Octave (mimics Matlab)
+ * Yacas (mimics Wolfram/Mathematica)
+ * Protobuf compiler
+ * GRPC generator
+
+
 # Usage
+
+You need to have a home dir prepared, with vxst as the default user, you can always change user by 
+build your own workspace FROM this release.
 
 Start the container:
 
