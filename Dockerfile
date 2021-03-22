@@ -11,7 +11,7 @@ RUN apt-get install -y -q vim-nox emacs-nox byobu zsh bash sudo xz-utils \
                           bash-completion bzip2 gzip zstd lldb \
                           gcc g++ gfortran gdb valgrind clang openjdk-17-jdk default-jdk \
                           libopenblas-dev libomp-dev libgomp1 openmpi-bin llvm-dev \
-                          cmake git git-lfs gpg locales-all htop glances \
+                          cmake git git-lfs gpg locales-all htop glances rbenv \
                           python-is-python2 python2-dev python-six swig rsync wget
 
 RUN apt-get install -y -q --no-install-recommends texlive texlive-lang-chinese
