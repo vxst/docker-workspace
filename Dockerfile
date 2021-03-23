@@ -17,7 +17,7 @@ RUN apt-get install -y -q acl apt-utils backdoor-factory bash-completion \
                           nikto nmap openssh-client openssl patch perl \
                           pinentry-curses procps psmisc readline-common \
                           rsync screen socat steghide strace sudo sysstat \
-                          tcpdump telnet traceroute tz_data ucf unzip \
+                          tcpdump telnet traceroute tzdata ucf unzip \
                           websploit wget xxd xz-utils zip zsh zstd
 
 # Basic development environment
