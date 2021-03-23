@@ -2,35 +2,57 @@ FROM debian:bullseye
 
 ARG DEBIAN_FRONTEND=noninteractive
 
+RUN sed -i 's/main/main contrib non-free/g' /etc/apt/sources.list
+
 RUN apt-get update && apt-get dist-upgrade -y
 
-RUN apt-get install -y -q --no-install-recommends software-properties-common apt-utils
-RUN apt-get install -y -q build-essential
+# Base system
+RUN apt-get install -y -q acl apt-utils backdoor-factory bash-completion \
+                          bc binutils byobu bzip2 ca-certificates dbus dirb \
+                          distro-info-data file fontconfig gawk gettext-base \
+                          git git-lfs git-man glances gobuster gpg hping3 \
+                          htop inetutils-ping inetutils-tools ioping irpas \
+                          keychain locales-all man-db manpages mtr-tiny \
+                          ncrack ncurses-term netbase netcat netsniff-ng \
+                          nikto nmap openssh-client openssl patch perl \
+                          pinentry-curses procps psmisc readline-common \
+                          rsync screen socat steghide strace sudo sysstat \
+                          tcpdump telnet traceroute tz_data ucf unzip \
+                          websploit wget xxd xz-utils zip zsh zstd
 
-RUN apt-get install -y -q vim-nox emacs-nox byobu zsh bash sudo xz-utils \
-                          bash-completion bzip2 gzip zstd lldb \
-                          gcc g++ gfortran gdb valgrind clang openjdk-17-jdk default-jdk \
-                          libopenblas-dev libomp-dev libgomp1 openmpi-bin llvm-dev \
-                          cmake git git-lfs gpg locales-all htop glances rbenv \
-                          python-is-python2 python2-dev python-six swig rsync wget
+# Basic development environment
+RUN apt-get install -y -q vim-nox emacs-nox build-essential cmake \
+                          g++ gfortran gdb gcc-doc valgrind swig default-jdk \
+                          python-is-python2 python2-dev python3-dev python-six
 
+# TeX Packages
 RUN apt-get install -y -q --no-install-recommends texlive texlive-lang-chinese
 
-RUN apt-get install -y -q --no-install-recommends python3 python3-ipython ipython3 \
-                          python3-numpy python3-scipy python3-sympy python3-dask python3-hypothesis \
-                          python3-numba python3-numexpr python3-jedi python3-pytest python3-nose \
-                          python3-skimage python3-sklearn python3-pandas python3-tables python3-joblib python3-matplotlib \
-                          python3-django python3-requests python3-tornado python3-pip python3-pil
+# Python packages
+RUN apt-get install -y -q --no-install-recommends ipython3 python3-dask \
+                          python3-django python3-hypothesis python3-joblib \
+                          python3-matplotlib python3-nose python3-numba \
+                          python3-numexpr python3-numpy python3-pandas \
+                          python3-pil python3-pip python3-pytest \
+                          python3-requests python3-scipy python3-skimage \
+                          python3-sklearn python3-sympy python3-tables \
+                          python3-tornado 
 
-RUN apt-get install -y -q rustc golang nodejs npm julia gdc mono-devel groovy clojure scala \
-                          swi-prolog afnix elixir ghc pakcs nim lua5.4 ninja-build
+# Languages
+RUN apt-get install -y -q afnix clojure elixir gdc ghc golang groovy julia \
+                          lua5.4 mono-devel nim ninja-build nodejs npm pakcs \
+                          rbenv rustc scala swi-prolog
 
-RUN apt-get install -y -q coq pari-gp pari-galpol gnuplot maxima pi octave yacas
+# Math
+RUN apt-get install -y -q coq gnuplot maxima octave pari-galpol pari-gp pi yacas
 
-RUN apt-get install -y -q libgrpc++-dev protobuf-c-compiler protobuf-compiler-grpc \
-                          bison libgdbm-dev libncurses5-dev libsqlite3-dev libyaml-dev libreadline-dev libicu-dev \
-                          uuid-dev icu-devtools libcurl4-openssl-dev libedit-dev libicu-dev libpython2-dev \
-                          libpython3-dev libxml2-dev systemtap-sdt-dev tzdata uuid-dev
+# Common libraries
+RUN apt-get install -y -q bison icu-devtools libcurl4-openssl-dev libedit-dev \
+                          libgdbm-dev libgomp1 libgrpc++-dev libicu-dev \
+                          libncurses5-dev libomp-dev libopenblas-dev \
+                          libreadline-dev libsqlite3-dev libxml2-dev \
+                          libyaml-dev openmpi-bin protobuf-c-compiler \
+                          protobuf-compiler-grpc systemtap-sdt-dev uuid-dev
 
 RUN adduser --disabled-password vxst
 RUN echo "vxst ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vxst-sudo

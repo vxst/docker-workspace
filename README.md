@@ -25,7 +25,7 @@ build image FROM vxst/workspace.
 
  * C/C++/ObjC/ObjC++/C#/D
  * Fortran
- * Java 11/17
+ * Java 11
  * Python3 with science related libraries
  * Elixir
  * NodeJS
