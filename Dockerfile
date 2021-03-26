@@ -23,7 +23,8 @@ RUN apt-get install -y -q acl apt-utils backdoor-factory bash-completion \
 # Basic development environment
 RUN apt-get install -y -q vim-nox emacs-nox build-essential cmake \
                           g++ gfortran gdb gcc-doc valgrind swig default-jdk \
-                          python-is-python2 python2-dev python3-dev python-six
+                          python-is-python2 python2-dev python3-dev python-six \
+                          vim-youcompleteme 
 
 # TeX Packages
 RUN apt-get install -y -q --no-install-recommends texlive texlive-lang-chinese
