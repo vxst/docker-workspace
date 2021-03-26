@@ -52,7 +52,8 @@ RUN apt-get install -y -q bison icu-devtools libcurl4-openssl-dev libedit-dev \
                           libncurses5-dev libomp-dev libopenblas-dev \
                           libreadline-dev libsqlite3-dev libxml2-dev \
                           libyaml-dev openmpi-bin protobuf-c-compiler \
-                          protobuf-compiler-grpc systemtap-sdt-dev uuid-dev
+                          protobuf-compiler-grpc systemtap-sdt-dev uuid-dev \
+                          libhdf5-dev
 
 RUN adduser --disabled-password vxst
 RUN echo "vxst ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vxst-sudo
