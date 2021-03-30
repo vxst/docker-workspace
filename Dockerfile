@@ -18,7 +18,8 @@ RUN apt-get install -y -q acl apt-utils backdoor-factory bash-completion \
                           pinentry-curses procps psmisc readline-common \
                           rsync screen socat steghide strace sudo sysstat \
                           tcpdump telnet traceroute tzdata ucf unzip \
-                          websploit wget xxd xz-utils zip zsh zstd
+                          websploit wget xxd xz-utils zip zsh zstd \
+						  pwgen
 
 # Basic development environment
 RUN apt-get install -y -q vim-nox emacs-nox build-essential cmake \
