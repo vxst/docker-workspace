@@ -59,6 +59,8 @@ build image FROM vxst/workspace.
 You need to have a home dir prepared, with vxst as the default user, you can always change user by 
 build your own workspace FROM this release.
 
+**YOU NEED TO HAVE A HOME DIR! COPY FROM EXISTING HOME OR CREATE IT**
+
 Start the container:
 
 ```bash
