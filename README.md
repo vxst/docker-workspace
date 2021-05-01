@@ -12,9 +12,9 @@ Tested on Intel Ice Lake, ARM Cortex-A53 and Cortex-A72(Raspberry Pi, using arm/
 
 Numpy, scipy and sympy pass the self-tests. Most packages have been briefly tested and used on all three platforms.
 
-The aim of this image is to balance usability, correctness and the latest version. It might be the easiest way to
-setup a Linux workspace on Apple M1, since Docker has released RC1 version of Apple Silicon, and there seems to be
-no other way to run VMs on the new M1 chip.
+This image aims to balance usability, correctness and the latest version. It might be the easiest way to
+setup a Linux workspace on Apple M1, since Docker has released the stable version for Apple Silicon, and there seems to be
+no easier way to run the Linux development environment on the new M1 chip.
 
 # Included language
 
@@ -43,7 +43,7 @@ build image FROM vxst/workspace.
  * AFNIX
  * Curry
 
-## Domain specific programming languages
+## Domain-specific programming languages
 
  * Coq
  * Pari/GP
@@ -67,7 +67,7 @@ Start the container:
 docker run -v /some-path-to-home:/home -d --rm --name workspace vxst/workspace
 ```
 
-Go into workspace:
+Go into the workspace:
 
 ```bash
 docker exec -it workspace byobu
@@ -76,9 +76,20 @@ docker exec -it workspace byobu
 Aliases can be set like:
 
 ```bash
-alias StartLinux='docker run -v /Users/vxst/workdir/home:/home -d --rm --name workspace vxst/workspace'
-alias ToLinux='docker exec -it workspace byobu'
+alias _.begin='docker run -v /Volumes/Linux\ Home/home:/home -d --rm --name workspace vxst/workspace'
+alias _.end='docker stop workspace'
+alias _.byobu='docker exec -it workspace byobu'
+alias _.zsh='docker exec -it workspace zsh'
+alias _.update='docker pull vxst/workspace'
 ```
+And you could type
+```bash
+_.end; _.update; _.begin
+_.zsh
+```
+
+> Everything that has a beginning has an end.
+
 
 ```
 MIT License
@@ -87,13 +98,13 @@ Copyright (c) 2013-2021 Shan Chunqing(vxst@vxst.org)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
+in the software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
+copies of the software, and to permit persons to whom the software is
 furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+copies or substantial portions of the software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
