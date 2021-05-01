@@ -19,7 +19,7 @@ RUN apt-get install -y -q acl apt-utils backdoor-factory bash-completion \
                           rsync screen socat steghide strace sudo sysstat \
                           tcpdump telnet traceroute tzdata ucf unzip \
                           websploit wget xxd xz-utils zip zsh zstd \
-						  pwgen
+			  pwgen 
 
 # Basic development environment
 RUN apt-get install -y -q vim-nox emacs-nox build-essential cmake \
@@ -55,8 +55,10 @@ RUN apt-get install -y -q bison icu-devtools libcurl4-openssl-dev libedit-dev \
                           libreadline-dev libsqlite3-dev libxml2-dev \
                           libyaml-dev openmpi-bin protobuf-c-compiler \
                           protobuf-compiler-grpc systemtap-sdt-dev uuid-dev \
-                          libhdf5-dev
+                          libhdf5-dev libjemalloc2
 
+# We use jemalloc as default system-wide malloc to reduce overall memory usage
+RUN echo /usr/lib/`uname -m`-linux-gnu/libjemalloc.so.2 > /etc/ld.so.preload
 RUN adduser --disabled-password vxst
 RUN echo "vxst ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vxst-sudo
 RUN chsh -s /bin/zsh vxst
