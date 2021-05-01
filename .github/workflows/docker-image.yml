@@ -5,7 +5,7 @@ on:
     branches:
       - 'master'
   schedule:
-    - cron: '30 19 * * *'
+    - cron: '30 19 * * 5'
 
 jobs:
   build_image:
