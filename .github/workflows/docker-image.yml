@@ -41,11 +41,17 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - 
+        name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       -
         name: Build and push
         uses: docker/build-push-action@v2
         with:
           context: .
           platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
+          cache-from: type=registry,ref=vxst/workspace:latest
+          cache-to: type=inline
           push: true
-          tags: vxst/workspace:latest
+          tags: vxst/workspace:latest, vxst/workspace:${{ steps.date.outputs.date }}
