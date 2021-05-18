@@ -53,7 +53,7 @@ RUN apt-get install -y -q bison icu-devtools libcurl4-openssl-dev libedit-dev \
                           libgdbm-dev libgomp1 libgrpc++-dev libicu-dev \
                           libncurses5-dev libomp-dev libopenblas-dev \
                           libreadline-dev libsqlite3-dev libxml2-dev \
-                          libyaml-dev openmpi-bin protobuf-c-compiler \
+                          libyaml-dev mpich protobuf-c-compiler \
                           protobuf-compiler-grpc systemtap-sdt-dev uuid-dev \
                           libhdf5-dev libjemalloc2
 
