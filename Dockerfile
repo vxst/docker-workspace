@@ -10,7 +10,7 @@ RUN apt-get update && apt-get dist-upgrade -y
 RUN apt-get install -y -q acl apt-utils backdoor-factory bash-completion \
                           bc binutils byobu bzip2 ca-certificates dbus dirb \
                           distro-info-data file fontconfig gawk gettext-base \
-                          git git-lfs git-man glances gobuster gpg hping3 \
+                          git git-lfs git-man gobuster gpg hping3 \
                           htop inetutils-ping inetutils-tools ioping irpas \
                           keychain locales-all man-db manpages mtr-tiny \
                           ncrack ncurses-term netbase netcat netsniff-ng \
