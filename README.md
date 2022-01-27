@@ -6,7 +6,6 @@ My devices are:
 
  * Apple M1 (Macbook Air)
  * i7 1068NG7(Macbook Pro)
- * Cortex-A72(Raspberry Pi)
 
 Tested on Intel Ice Lake, ARM Cortex-A53 and Cortex-A72(Raspberry Pi, using arm/v7 and arm64/v8), Apple M1(with arm64/v8).
 
